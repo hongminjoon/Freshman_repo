@@ -17,7 +17,6 @@ def solution(answers):
         if answers[i%len(answers)] == three[i%len(three)]:
             count[2] += 1
 
-    print(count)
-    return [count.index(max(count))+1]
+    return [index + 1 for index, num in enumerate(count) if num == max(count)]
 
 print(solution([1,3,2,4,2]))
