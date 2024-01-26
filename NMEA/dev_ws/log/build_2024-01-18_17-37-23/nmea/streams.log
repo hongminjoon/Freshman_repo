@@ -1,0 +1,26 @@
+[0.654s] Invoking command in '/home/sjjung/Desktop/vilab/dev_ws/src/nmea': PYTHONPATH=/home/sjjung/Desktop/vilab/dev_ws/build/nmea/prefix_override:/home/sjjung/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/nmea build --build-base /home/sjjung/Desktop/vilab/dev_ws/build/nmea/build install --record /home/sjjung/Desktop/vilab/dev_ws/build/nmea/install.log --install-scripts $base/lib/nmea --single-version-externally-managed
+[0.790s] running egg_info
+[0.791s] writing ../../build/nmea/nmea.egg-info/PKG-INFO
+[0.791s] writing dependency_links to ../../build/nmea/nmea.egg-info/dependency_links.txt
+[0.791s] writing entry points to ../../build/nmea/nmea.egg-info/entry_points.txt
+[0.791s] writing requirements to ../../build/nmea/nmea.egg-info/requires.txt
+[0.791s] writing top-level names to ../../build/nmea/nmea.egg-info/top_level.txt
+[0.815s] reading manifest file '../../build/nmea/nmea.egg-info/SOURCES.txt'
+[0.816s] writing manifest file '../../build/nmea/nmea.egg-info/SOURCES.txt'
+[0.816s] running build
+[0.816s] running build_py
+[0.816s] copying nmea/nmea_publisher.py -> /home/sjjung/Desktop/vilab/dev_ws/build/nmea/build/lib/nmea
+[0.816s] running install
+[0.817s] running install_lib
+[0.818s] copying /home/sjjung/Desktop/vilab/dev_ws/build/nmea/build/lib/nmea/nmea_publisher.py -> /home/sjjung/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages/nmea
+[0.818s] byte-compiling /home/sjjung/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages/nmea/nmea_publisher.py to nmea_publisher.cpython-38.pyc
+[0.820s] running install_data
+[0.820s] running install_egg_info
+[0.821s] removing '/home/sjjung/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages/nmea-0.0.0-py3.8.egg-info' (and everything under it)
+[0.822s] Copying ../../build/nmea/nmea.egg-info to /home/sjjung/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages/nmea-0.0.0-py3.8.egg-info
+[0.822s] running install_scripts
+[0.834s] Installing nmea_last_subscriber script to /home/sjjung/Desktop/vilab/dev_ws/install/nmea/lib/nmea
+[0.834s] Installing nmea_publisher script to /home/sjjung/Desktop/vilab/dev_ws/install/nmea/lib/nmea
+[0.835s] Installing nmea_subscriber script to /home/sjjung/Desktop/vilab/dev_ws/install/nmea/lib/nmea
+[0.835s] writing list of installed files to '/home/sjjung/Desktop/vilab/dev_ws/build/nmea/install.log'
+[0.848s] Invoked command in '/home/sjjung/Desktop/vilab/dev_ws/src/nmea' returned '0': PYTHONPATH=/home/sjjung/Desktop/vilab/dev_ws/build/nmea/prefix_override:/home/sjjung/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/nmea build --build-base /home/sjjung/Desktop/vilab/dev_ws/build/nmea/build install --record /home/sjjung/Desktop/vilab/dev_ws/build/nmea/install.log --install-scripts $base/lib/nmea --single-version-externally-managed

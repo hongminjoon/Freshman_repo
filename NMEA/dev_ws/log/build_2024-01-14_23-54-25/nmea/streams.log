@@ -1,0 +1,37 @@
+[0.546s] Invoking command in '/home/user/Desktop/vilab/dev_ws/src/nmea': PYTHONPATH=/home/user/Desktop/vilab/dev_ws/build/nmea/prefix_override:/home/user/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/nmea build --build-base /home/user/Desktop/vilab/dev_ws/build/nmea/build install --record /home/user/Desktop/vilab/dev_ws/build/nmea/install.log --install-scripts $base/lib/nmea --single-version-externally-managed
+[0.663s] running egg_info
+[0.663s] writing ../../build/nmea/nmea.egg-info/PKG-INFO
+[0.663s] writing dependency_links to ../../build/nmea/nmea.egg-info/dependency_links.txt
+[0.663s] writing entry points to ../../build/nmea/nmea.egg-info/entry_points.txt
+[0.663s] writing requirements to ../../build/nmea/nmea.egg-info/requires.txt
+[0.663s] writing top-level names to ../../build/nmea/nmea.egg-info/top_level.txt
+[0.683s] reading manifest file '../../build/nmea/nmea.egg-info/SOURCES.txt'
+[0.683s] writing manifest file '../../build/nmea/nmea.egg-info/SOURCES.txt'
+[0.683s] running build
+[0.683s] running build_py
+[0.684s] copying nmea/parsedData.py -> /home/user/Desktop/vilab/dev_ws/build/nmea/build/lib/nmea
+[0.684s] copying nmea/nmea.py -> /home/user/Desktop/vilab/dev_ws/build/nmea/build/lib/nmea
+[0.684s] copying nmea/nmea_subscriber.py -> /home/user/Desktop/vilab/dev_ws/build/nmea/build/lib/nmea
+[0.684s] running install
+[0.684s] running install_lib
+[0.685s] copying /home/user/Desktop/vilab/dev_ws/build/nmea/build/lib/nmea/parsedData.py -> /home/user/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages/nmea
+[0.685s] copying /home/user/Desktop/vilab/dev_ws/build/nmea/build/lib/nmea/nmea.py -> /home/user/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages/nmea
+[0.685s] copying /home/user/Desktop/vilab/dev_ws/build/nmea/build/lib/nmea/nmea_subscriber.py -> /home/user/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages/nmea
+[0.685s] byte-compiling /home/user/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages/nmea/parsedData.py to parsedData.cpython-38.pyc
+[0.686s] byte-compiling /home/user/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages/nmea/nmea.py to nmea.cpython-38.pyc
+[0.686s] byte-compiling /home/user/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages/nmea/nmea_subscriber.py to nmea_subscriber.cpython-38.pyc
+[0.686s] running install_data
+[0.687s]   File "/home/user/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages/nmea/nmea_subscriber.py", line 6
+[0.687s]     from nmea
+[0.687s]             ^
+[0.687s] SyntaxError: invalid syntax
+[0.687s] 
+[0.687s] running install_egg_info
+[0.687s] removing '/home/user/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages/nmea-0.0.0-py3.8.egg-info' (and everything under it)
+[0.688s] Copying ../../build/nmea/nmea.egg-info to /home/user/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages/nmea-0.0.0-py3.8.egg-info
+[0.688s] running install_scripts
+[0.698s] Installing nmea_parsing script to /home/user/Desktop/vilab/dev_ws/install/nmea/lib/nmea
+[0.698s] Installing nmea_publisher script to /home/user/Desktop/vilab/dev_ws/install/nmea/lib/nmea
+[0.698s] Installing nmea_subscriber script to /home/user/Desktop/vilab/dev_ws/install/nmea/lib/nmea
+[0.698s] writing list of installed files to '/home/user/Desktop/vilab/dev_ws/build/nmea/install.log'
+[0.709s] Invoked command in '/home/user/Desktop/vilab/dev_ws/src/nmea' returned '0': PYTHONPATH=/home/user/Desktop/vilab/dev_ws/build/nmea/prefix_override:/home/user/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/nmea build --build-base /home/user/Desktop/vilab/dev_ws/build/nmea/build install --record /home/user/Desktop/vilab/dev_ws/build/nmea/install.log --install-scripts $base/lib/nmea --single-version-externally-managed

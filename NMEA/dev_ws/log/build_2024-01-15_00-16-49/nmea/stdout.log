@@ -1,0 +1,23 @@
+running egg_info
+writing ../../build/nmea/nmea.egg-info/PKG-INFO
+writing dependency_links to ../../build/nmea/nmea.egg-info/dependency_links.txt
+writing entry points to ../../build/nmea/nmea.egg-info/entry_points.txt
+writing requirements to ../../build/nmea/nmea.egg-info/requires.txt
+writing top-level names to ../../build/nmea/nmea.egg-info/top_level.txt
+reading manifest file '../../build/nmea/nmea.egg-info/SOURCES.txt'
+writing manifest file '../../build/nmea/nmea.egg-info/SOURCES.txt'
+running build
+running build_py
+copying nmea/nmea_subscriber.py -> /home/user/Desktop/vilab/dev_ws/build/nmea/build/lib/nmea
+running install
+running install_lib
+copying /home/user/Desktop/vilab/dev_ws/build/nmea/build/lib/nmea/nmea_subscriber.py -> /home/user/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages/nmea
+byte-compiling /home/user/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages/nmea/nmea_subscriber.py to nmea_subscriber.cpython-38.pyc
+running install_data
+running install_egg_info
+removing '/home/user/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages/nmea-0.0.0-py3.8.egg-info' (and everything under it)
+Copying ../../build/nmea/nmea.egg-info to /home/user/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages/nmea-0.0.0-py3.8.egg-info
+running install_scripts
+Installing nmea_publisher script to /home/user/Desktop/vilab/dev_ws/install/nmea/lib/nmea
+Installing nmea_subscriber script to /home/user/Desktop/vilab/dev_ws/install/nmea/lib/nmea
+writing list of installed files to '/home/user/Desktop/vilab/dev_ws/build/nmea/install.log'

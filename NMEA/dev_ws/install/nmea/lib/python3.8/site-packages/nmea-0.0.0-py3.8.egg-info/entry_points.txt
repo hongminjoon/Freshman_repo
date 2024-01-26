@@ -1,0 +1,5 @@
+[console_scripts]
+nmea_last_subscriber = nmea.nmea_last_subscriber:main
+nmea_publisher = nmea.nmea_publisher:main
+nmea_subscriber = nmea.nmea_subscriber:main
+

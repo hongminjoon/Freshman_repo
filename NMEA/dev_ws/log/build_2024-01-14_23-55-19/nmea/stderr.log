@@ -1,0 +1,5 @@
+  File "/home/user/Desktop/vilab/dev_ws/install/nmea/lib/python3.8/site-packages/nmea/nmea_subscriber.py", line 36
+    n = nmea.(nmea_sentence)
+             ^
+SyntaxError: invalid syntax
+
