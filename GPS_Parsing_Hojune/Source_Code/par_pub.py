@@ -17,6 +17,7 @@ class Parpub(Node):
 
         if self.time == 0:
             self.ser = serial.Serial('/dev/ttyACM0', 115200, timeout = 1)
+            # /dev 디렉토리에서 gps가 연결된 usb 포트를 확인 후 바꾸어주어야 함 
             
     def serial_publish(self):
         self.time += 1
