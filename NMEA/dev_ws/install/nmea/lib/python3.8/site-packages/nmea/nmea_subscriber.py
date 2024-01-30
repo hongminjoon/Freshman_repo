@@ -5,6 +5,8 @@ from std_msgs.msg import String
 
 import pyproj
 import pynmea2
+import pandas as pd
+
 import warnings
 
 warnings.filterwarnings("ignore", category=FutureWarning)
@@ -22,12 +24,19 @@ class Sub(Node):
         
         self.publisher_ = self.create_publisher(String, 
                             'parsed_data', qos_profile)
-
+        
+        self.UTM_latitude_list = []
+        self.UTM_longitude_list = []
+    
+    
     def listener_callback(self, msg):
         if msg.data[3:6] == "GGA":
             # GGA 데이터를 프로세싱
             latitude, longitude, utm_latitude, utm_longitude = self.TM2UTM(msg.data)
-            
+
+            self.UTM_latitude_list.append(utm_latitude)
+            self.UTM_longitude_list.append(utm_longitude)
+
             line_list = msg.data.split(',')
 
             result_str = (
@@ -89,6 +98,12 @@ class Sub(Node):
         utm_longitude, utm_latitude = pyproj.transform(proj_4326,proj_32652,longitude, latitude)
 
         return latitude, longitude, utm_latitude, utm_longitude
+    
+    def save_to_csv(self):
+        data = {'UTM_latitude': self.UTM_latitude_list, 'UTM_longitude': self.UTM_longitude_list}
+        df = pd.DataFrame(data)
+        df.to_csv('utm_data.csv', index=False)
+        super().destroy_node()
 
 def main(args=None):
     rclpy.init(args=args)
@@ -98,7 +113,7 @@ def main(args=None):
     except KeyboardInterrupt:
         node.get_logger().info('Keyboard Interrupt (SIGINT)')
     finally:
-        node.destroy_node()
+        node.save_to_csv()
         rclpy.shutdown()
 
 

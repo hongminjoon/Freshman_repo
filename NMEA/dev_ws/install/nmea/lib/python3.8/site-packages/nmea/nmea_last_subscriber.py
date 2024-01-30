@@ -15,7 +15,8 @@ class Sub(Node):
         )
     
     def listener_callback(self, msg):
-        self.get_logger().info('Received: %s' % msg.data)
+        #self.get_logger().info('Received: %s' % msg.data)
+        print(msg.data[0])
 
 def main(args=None):
     rclpy.init(args=args)

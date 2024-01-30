@@ -1,0 +1,29 @@
+[0.799s] Invoking command in '/home/sjjung/Project/Freshman_repo/NMEA/dev_ws/src/nmea': PYTHONPATH=/home/sjjung/Project/Freshman_repo/NMEA/dev_ws/build/nmea/prefix_override:/home/sjjung/Project/Freshman_repo/NMEA/dev_ws/install/nmea/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/nmea build --build-base /home/sjjung/Project/Freshman_repo/NMEA/dev_ws/build/nmea/build install --record /home/sjjung/Project/Freshman_repo/NMEA/dev_ws/build/nmea/install.log --install-scripts $base/lib/nmea --single-version-externally-managed
+[0.962s] running egg_info
+[0.963s] writing ../../build/nmea/nmea.egg-info/PKG-INFO
+[0.963s] writing dependency_links to ../../build/nmea/nmea.egg-info/dependency_links.txt
+[0.963s] writing entry points to ../../build/nmea/nmea.egg-info/entry_points.txt
+[0.963s] writing requirements to ../../build/nmea/nmea.egg-info/requires.txt
+[0.963s] writing top-level names to ../../build/nmea/nmea.egg-info/top_level.txt
+[0.987s] reading manifest file '../../build/nmea/nmea.egg-info/SOURCES.txt'
+[0.987s] writing manifest file '../../build/nmea/nmea.egg-info/SOURCES.txt'
+[0.987s] running build
+[0.988s] running build_py
+[0.988s] copying nmea/nmea_last_subscriber.py -> /home/sjjung/Project/Freshman_repo/NMEA/dev_ws/build/nmea/build/lib/nmea
+[0.988s] copying nmea/nmea_subscriber.py -> /home/sjjung/Project/Freshman_repo/NMEA/dev_ws/build/nmea/build/lib/nmea
+[0.988s] running install
+[0.988s] running install_lib
+[0.989s] copying /home/sjjung/Project/Freshman_repo/NMEA/dev_ws/build/nmea/build/lib/nmea/nmea_last_subscriber.py -> /home/sjjung/Project/Freshman_repo/NMEA/dev_ws/install/nmea/lib/python3.8/site-packages/nmea
+[0.989s] copying /home/sjjung/Project/Freshman_repo/NMEA/dev_ws/build/nmea/build/lib/nmea/nmea_subscriber.py -> /home/sjjung/Project/Freshman_repo/NMEA/dev_ws/install/nmea/lib/python3.8/site-packages/nmea
+[0.989s] byte-compiling /home/sjjung/Project/Freshman_repo/NMEA/dev_ws/install/nmea/lib/python3.8/site-packages/nmea/nmea_last_subscriber.py to nmea_last_subscriber.cpython-38.pyc
+[0.990s] byte-compiling /home/sjjung/Project/Freshman_repo/NMEA/dev_ws/install/nmea/lib/python3.8/site-packages/nmea/nmea_subscriber.py to nmea_subscriber.cpython-38.pyc
+[0.991s] running install_data
+[0.991s] running install_egg_info
+[0.993s] removing '/home/sjjung/Project/Freshman_repo/NMEA/dev_ws/install/nmea/lib/python3.8/site-packages/nmea-0.0.0-py3.8.egg-info' (and everything under it)
+[0.993s] Copying ../../build/nmea/nmea.egg-info to /home/sjjung/Project/Freshman_repo/NMEA/dev_ws/install/nmea/lib/python3.8/site-packages/nmea-0.0.0-py3.8.egg-info
+[0.993s] running install_scripts
+[1.004s] Installing nmea_last_subscriber script to /home/sjjung/Project/Freshman_repo/NMEA/dev_ws/install/nmea/lib/nmea
+[1.004s] Installing nmea_publisher script to /home/sjjung/Project/Freshman_repo/NMEA/dev_ws/install/nmea/lib/nmea
+[1.005s] Installing nmea_subscriber script to /home/sjjung/Project/Freshman_repo/NMEA/dev_ws/install/nmea/lib/nmea
+[1.005s] writing list of installed files to '/home/sjjung/Project/Freshman_repo/NMEA/dev_ws/build/nmea/install.log'
+[1.017s] Invoked command in '/home/sjjung/Project/Freshman_repo/NMEA/dev_ws/src/nmea' returned '0': PYTHONPATH=/home/sjjung/Project/Freshman_repo/NMEA/dev_ws/build/nmea/prefix_override:/home/sjjung/Project/Freshman_repo/NMEA/dev_ws/install/nmea/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/nmea build --build-base /home/sjjung/Project/Freshman_repo/NMEA/dev_ws/build/nmea/build install --record /home/sjjung/Project/Freshman_repo/NMEA/dev_ws/build/nmea/install.log --install-scripts $base/lib/nmea --single-version-externally-managed
