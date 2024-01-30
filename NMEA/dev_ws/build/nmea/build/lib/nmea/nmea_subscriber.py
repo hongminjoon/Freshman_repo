@@ -25,6 +25,9 @@ class Sub(Node):
         self.publisher_ = self.create_publisher(String, 
                             'parsed_data', qos_profile)
         
+        self.latitude_list = []
+        self.longitude_list = []
+
         self.UTM_latitude_list = []
         self.UTM_longitude_list = []
     
@@ -33,9 +36,12 @@ class Sub(Node):
         if msg.data[3:6] == "GGA":
             # GGA 데이터를 프로세싱
             latitude, longitude, utm_latitude, utm_longitude = self.TM2UTM(msg.data)
-
-            self.UTM_latitude_list.append(utm_latitude)
-            self.UTM_longitude_list.append(utm_longitude)
+            
+            #self.latitude_list.append(latitude)
+            #self.longitude_list.append(longitude)
+            if latitude and longitude:
+                self.UTM_latitude_list.append(utm_latitude)
+                self.UTM_longitude_list.append(utm_longitude)
 
             line_list = msg.data.split(',')
 
@@ -100,6 +106,7 @@ class Sub(Node):
         return latitude, longitude, utm_latitude, utm_longitude
     
     def save_to_csv(self):
+        #data = {'latitude': self.latitude_list, 'longitude': self.longitude_list, 'UTM_latitude': self.UTM_latitude_list, 'UTM_longitude': self.UTM_longitude_list}
         data = {'UTM_latitude': self.UTM_latitude_list, 'UTM_longitude': self.UTM_longitude_list}
         df = pd.DataFrame(data)
         df.to_csv('utm_data.csv', index=False)

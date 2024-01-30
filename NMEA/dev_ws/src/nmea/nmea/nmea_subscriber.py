@@ -25,6 +25,9 @@ class Sub(Node):
         self.publisher_ = self.create_publisher(String, 
                             'parsed_data', qos_profile)
         
+        self.latitude_list = []
+        self.longitude_list = []
+
         self.UTM_latitude_list = []
         self.UTM_longitude_list = []
     
@@ -33,9 +36,11 @@ class Sub(Node):
         if msg.data[3:6] == "GGA":
             # GGA 데이터를 프로세싱
             latitude, longitude, utm_latitude, utm_longitude = self.TM2UTM(msg.data)
-
-            self.UTM_latitude_list.append(utm_latitude)
-            self.UTM_longitude_list.append(utm_longitude)
+            
+            # latitude, longitude 0값 예외 처리
+            if latitude and longitude: 
+                self.UTM_latitude_list.append(utm_latitude)
+                self.UTM_longitude_list.append(utm_longitude)
 
             line_list = msg.data.split(',')
 
