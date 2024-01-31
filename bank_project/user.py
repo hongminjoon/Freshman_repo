@@ -74,9 +74,14 @@ class User:
 
     def check_password_format(self, password):
         # 최소 8자리 (대문자 1개 필수, 문자, 숫자, 특수문자 조합)
-        if not re.match(r"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$", password):
+        if not re.match(r"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[#@$!%*?&^])[A-Za-z\d@$!%*?&]{8,}$", password):
             return False
         return True
     
     def get_user(self):
-        return self.id, self.password
+        return self.id, self.password, self.account, self.deposit
+    
+    def deleteUser(self):
+        id_del = input("삭제할 id를 입력하세요: ")
+        password_del = input("삭제할 password를 입력하세요: ")
+        return id_del, password_del

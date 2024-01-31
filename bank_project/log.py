@@ -8,7 +8,7 @@ class Log:
         with open("./log/user_log.txt", "w") as log_file:
             log_file.write(f"{start_time}\n")
             for item in user_list:
-                log_file.write(f"{item[0]},{item[1]}\n")
+                log_file.write(f"{item[0]},{item[1]},{item[2]},{item[3]}\n")
     
     def read_log(self, file_path):
         log_data = []
@@ -17,7 +17,7 @@ class Log:
             for line in log_file:
                 entry_parts = line.split(",")
                 
-                number, text = map(str.strip, entry_parts)
-                log_data.append((number, text))
+                id, password, account, deposit = map(str.strip, entry_parts)
+                log_data.append((id, password, account, deposit))
 
         return log_data
