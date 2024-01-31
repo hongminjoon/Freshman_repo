@@ -1,6 +1,12 @@
 import re 
 
+user_list = [1,2,3,4]
+
+def get_user_list():
+        return user_list
+
 class User:
+
     def __init__(self):
         self.id = ''
         self.password = ''
