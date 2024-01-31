@@ -29,15 +29,8 @@ def main():
         elif ch == "3":
             print(3)
         elif ch == "4":
-            # id_del, password_del = user.deleteUser()
-            # #print(user_list)
-            # login_dict = {username: password for username, password, _, _ in user_list}
-            # #print(login_dict)
-            # if id_del in login_dict and password_del != login_dict[id_del]:
-            #     print("입력하신 id의 비밀번호가 일치하지 않습니다.")
-            # elif id_del not in user_list:
-            #     print("입력하신 id가 존재하지 않습니다.")
-            print(4)
+            id_del, password_del = user.deleteUser()
+            user_list.delete_user(id_del, password_del)
 
         elif ch == "Exit":
             print("Exit")
