@@ -1,7 +1,6 @@
 import re 
 
 class User:
-
     def __init__(self):
         self.id = ''
         self.password = ''
@@ -9,12 +8,10 @@ class User:
         self.deposit = 100000
 
     def createUser(self):
-        self.createId()
-        # 수정 필요
-        # if id가 None이 아니면 createPassword()
-        # if id가 None이면, 메인메뉴로 이동
-        self.createPassword()
-        self.createAccount()
+        id = self.createId()
+        if id is not None:
+            self.createPassword()
+            self.createAccount()       
 
     def createId(self):
         max_attempts = 3
