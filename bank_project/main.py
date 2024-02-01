@@ -15,7 +15,8 @@ def main():
         print("1. User 생성")
         print("2. User 정보")
         print("3. 계좌 전송")
-        print("4. User 삭제")
+        print("4. 계좌 조회")
+        print("5. User 삭제")
         print("##################################")
         print('종료하시려면 "Exit"를 입력하세요.')
         
@@ -34,6 +35,12 @@ def main():
             bank.transfer_money()
             
         elif ch == "4":
+            account = input("조회할 계좌번호를 입력하세요: ")
+            history = bank.get_account_history(account)
+            if history is not None:
+                print(history)
+
+        elif ch == "5":
             id_del, password_del = user.deleteUser()
             user_list.delete_user(id_del, password_del)
 
