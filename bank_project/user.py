@@ -80,7 +80,7 @@ class User:
 
     def check_password_format(self, password):
         # 최소 8자리 (대문자 1개 필수, 문자, 숫자, 특수문자 조합)
-        if not re.match(r"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[#@$!%*?&^])[A-Za-z\d@$!%*?&]{8,}$", password):
+        if not re.match(r"^(?=.*[A-Z])(?=.*[a-z])(?=.*\d)(?=.*[@$!%*?&#^])[A-Za-z\d@$!%*?&#^]{8,}$", password):
             return False
         return True
     

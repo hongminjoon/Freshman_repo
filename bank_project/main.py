@@ -24,10 +24,13 @@ def main():
             user.createUser()
             id, password, account, deposit = user.get_user()
             user_list.append_user_list(id, password, account, deposit)
+            
         elif ch == "2":
             user_list.print_user_list()
+
         elif ch == "3":
             print(3)
+
         elif ch == "4":
             id_del, password_del = user.deleteUser()
             user_list.delete_user(id_del, password_del)
