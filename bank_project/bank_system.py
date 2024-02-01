@@ -1,13 +1,22 @@
-import user_list
 import random
+import os
+import user_list
+from log import Log
 
 # account : history
 # bank_dic = {"111111":[{"receiver_id":"geun4715", "receiver_account":333333,"money":1000000},
 #                      {"receiver_id":"geun8881", "receiver_account":222222,"money":1000}]}
 bank_dic = {}
 
+
 class Bank_System:   
-    
+    def loading_user_list(self):
+        global bank_dic
+        log = Log()
+        log_file_path = "./log/bank_log.txt"
+        if os.path.exists(log_file_path):
+            bank_dic = log.read_bank_log(log_file_path)
+
     def transfer_money(self):
         users = user_list.get_user_list()
 

@@ -28,10 +28,27 @@ class Log:
             log_file.write(f"{start_time}\n")
             for user in bank_dic:
                 log_file.write(f"{user}\n{bank_dic[user]}\n")
-
-                    
     
-    def read_bank_log():
+    def read_bank_log(self, file_path):
+        log_data = {}
 
+        with open(file_path, "r") as log_file:
+            next(log_file)    
+            index = 0
 
-        return 0
+            for line in log_file:
+                entry_parts = line.strip().split("\"")
+                if index % 2 == 0:
+                    key = entry_parts[0]
+                else:
+                    value = entry_parts[0]
+                    
+                    import ast
+                    value = ast.literal_eval(value)
+                    
+                    if key is not None and value is not None:
+                        log_data[key] = value
+                
+                index += 1
+
+        return log_data

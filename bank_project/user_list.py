@@ -22,8 +22,16 @@ def delete_user(id_del, password_del):
     elif id_del not in login_dict:
         print("입력하신 id가 존재하지 않습니다.")
     else:
-        user_list = [{"id":user['id'], "password":user['password'], "account":int(user['account']), "deposit":int(user['deposit'])} 
-                     for user in user_list if user['id'] != id_del or user['password'] != password_del]
+        user_list = [
+            {
+                "id":user['id'], 
+                "password":user['password'], 
+                "account":int(user['account']), 
+                "deposit":int(user['deposit'])
+            } 
+            for user in user_list 
+            if user['id'] != id_del or user['password'] != password_del
+        ]
         print("정상적으로 삭제되었습니다. ")
 
 def get_user_list():

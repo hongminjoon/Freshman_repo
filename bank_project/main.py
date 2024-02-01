@@ -7,6 +7,7 @@ user = User()
 log = Log()
 bank = Bank_System()
 user_list.loading_user_list()
+bank.loading_user_list()
 
 def main():
     while True:
@@ -49,6 +50,7 @@ def main():
             log.save_user_log(user_list.user_list)
             log.save_bank_log(bank.get_bank_dic())
             break
+
         else:
             print("다시입력")
 

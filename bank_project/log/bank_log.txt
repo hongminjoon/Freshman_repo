@@ -1,7 +1,5 @@
-2024-02-01 16:45:11
+2024-02-01 18:47:30
 95167644
-[{'receiver_id': 'wtw0196', 'receiver_account': 39155614, 'money': 23000}, {'receiver_id': 'wtw0196', 'receiver_account': 39155614, 'money': 63000}]
+[{'receiver_id': 'geun8881', 'receiver_account': 59583560, 'money': 69000}]
 59583560
-[{'receiver_id': 'wtw0196', 'receiver_account': 39155614, 'money': 87000}, {'receiver_id': 'geun0196', 'receiver_account': 95167644, 'money': 66000}]
-39155614
-[{'receiver_id': 'geun0196', 'receiver_account': 95167644, 'money': 56000}, {'receiver_id': 'geun0196', 'receiver_account': 95167644, 'money': 46000}]
+[{'receiver_id': 'geun0196', 'receiver_account': 95167644, 'money': 36000}]
