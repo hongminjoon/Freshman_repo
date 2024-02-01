@@ -1,0 +1,7 @@
+2024-02-01 16:45:11
+95167644
+[{'receiver_id': 'wtw0196', 'receiver_account': 39155614, 'money': 23000}, {'receiver_id': 'wtw0196', 'receiver_account': 39155614, 'money': 63000}]
+59583560
+[{'receiver_id': 'wtw0196', 'receiver_account': 39155614, 'money': 87000}, {'receiver_id': 'geun0196', 'receiver_account': 95167644, 'money': 66000}]
+39155614
+[{'receiver_id': 'geun0196', 'receiver_account': 95167644, 'money': 56000}, {'receiver_id': 'geun0196', 'receiver_account': 95167644, 'money': 46000}]

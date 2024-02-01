@@ -8,7 +8,7 @@ def loading_user_list():
     log = Log()
     log_file_path = "./log/user_log.txt"
     if os.path.exists(log_file_path):
-        user_list = log.read_log(log_file_path)
+        user_list = log.read_user_log(log_file_path)
 
 def append_user_list(id, password, account, deposit):
     user_list.append({"id":id, "password":password, "account":account, "deposit":deposit})

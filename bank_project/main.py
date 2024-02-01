@@ -46,7 +46,8 @@ def main():
 
         elif ch == "Exit":
             print("Exit")
-            log.save_log(user_list.user_list)
+            log.save_user_log(user_list.user_list)
+            log.save_bank_log(bank.get_bank_dic())
             break
         else:
             print("다시입력")

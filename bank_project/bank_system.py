@@ -38,7 +38,5 @@ class Bank_System:
         else:
             return bank_dic[account]
 
-
-
-
-
+    def get_bank_dic(self):
+        return bank_dic
