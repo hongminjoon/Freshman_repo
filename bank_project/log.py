@@ -18,6 +18,6 @@ class Log:
                 entry_parts = line.split(",")
                 
                 id, password, account, deposit = map(str.strip, entry_parts)
-                log_data.append({"id":id, "password":password, "account":account, "deposit":deposit})
+                log_data.append({"id":id, "password":password, "account":int(account), "deposit":int(deposit)})
 
         return log_data
