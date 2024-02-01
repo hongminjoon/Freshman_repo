@@ -1,9 +1,11 @@
 import user_list
 from user import User
 from log import Log
+from bank_system import Bank_System
 
 user = User()
 log = Log()
+bank = Bank_System()
 user_list.loading_user_list()
 
 def main():
@@ -29,8 +31,8 @@ def main():
             user_list.print_user_list()
 
         elif ch == "3":
-            print(3)
-
+            bank.transfer_money()
+            
         elif ch == "4":
             id_del, password_del = user.deleteUser()
             user_list.delete_user(id_del, password_del)
