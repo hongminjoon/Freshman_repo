@@ -1,5 +1,3 @@
-2024-02-01 18:47:30
+2024-02-02 10:42:54
 95167644
-[{'receiver_id': 'geun8881', 'receiver_account': 59583560, 'money': 69000}]
-59583560
-[{'receiver_id': 'geun0196', 'receiver_account': 95167644, 'money': 36000}]
+[{'receiver_id': 'geun8881', 'receiver_account': 77188932, 'money': 59000}, {'receiver_id': 'geun8881', 'receiver_account': 77188932, 'money': 42000}, {'receiver_id': 'geun8881', 'receiver_account': 77188932, 'money': 13000}]

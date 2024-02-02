@@ -1,4 +1,5 @@
 import re 
+import user_list
 
 class User:
     def __init__(self):
@@ -82,4 +83,11 @@ class User:
     def deleteUser(self):
         id_del = input("삭제할 id를 입력하세요: ")
         password_del = input("삭제할 password를 입력하세요: ")
-        return id_del, password_del
+        
+        target_user = next((user for user in user_list.get_user_list() if user['id'] == id_del and user['password'] == password_del),None)
+        if target_user is not None:
+            account_del = target_user["account"]
+            return id_del, password_del, account_del
+        
+        return id_del, password_del, " "
+        

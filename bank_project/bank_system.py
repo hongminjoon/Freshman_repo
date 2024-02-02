@@ -49,3 +49,8 @@ class Bank_System:
 
     def get_bank_dic(self):
         return bank_dic
+    
+    def delete_bank(self, del_account):
+        del_account = str(del_account)
+        if del_account in bank_dic:
+            del bank_dic[del_account]

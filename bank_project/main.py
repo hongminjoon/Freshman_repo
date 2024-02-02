@@ -42,8 +42,12 @@ def main():
                 print(history)
 
         elif ch == "5":
-            id_del, password_del = user.deleteUser()
-            user_list.delete_user(id_del, password_del)
+            id_del, password_del, account_del = user.deleteUser()
+
+            if id_del != " " and password_del != " ":
+                user_list.delete_user(id_del, password_del)
+            if account_del != " ":
+                bank.delete_bank(account_del)
 
         elif ch == "Exit":
             print("Exit")
