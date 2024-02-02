@@ -8,7 +8,6 @@ from log import Log
 #                      {"receiver_id":"geun8881", "receiver_account":222222,"money":1000}]}
 bank_dic = {}
 
-
 class Bank_System:   
     def loading_user_list(self):
         global bank_dic

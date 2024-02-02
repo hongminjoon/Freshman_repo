@@ -10,16 +10,25 @@ class User:
 
     def createUser(self):
         id = self.createId()
-        if id is not None:
-            self.createPassword()
-            self.createAccount()       
+        if id is None:
+            return 
+        self.createPassword()
+        self.createAccount()       
 
     def createId(self):
+        import user_list
+         
+        exist_user_id = [i['id'] for i in user_list.get_user_list()]
         max_attempts = 3
         attempts = 0
         
         while attempts < max_attempts:
             id = input("아이디를 입력하세요: ")
+
+            if id in exist_user_id:
+                print("존재하는 아이디 입니다.")
+                return None
+            
             if self.check_id_format(id):
                 self.id = id
                 return id
@@ -56,7 +65,7 @@ class User:
         string_pool = string.digits
         result = ""
 
-        for i in range(length) :
+        for _ in range(length) :
             # 랜덤한 하나의 숫자를 뽑아서, 문자열 결합을 한다.
             result += random.choice(string_pool)
 

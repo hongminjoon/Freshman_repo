@@ -25,9 +25,10 @@ def main():
         print("##################################")
 
         if ch == "1":
-            user.createUser()
-            id, password, account, deposit = user.get_user()
-            user_list.append_user_list(id, password, account, deposit)
+            a = user.createUser()
+            if a is not None:
+                id, password, account, deposit = user.get_user()
+                user_list.append_user_list(id, password, account, deposit)
             
         elif ch == "2":
             user_list.print_user_list()
