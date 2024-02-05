@@ -1,4 +1,4 @@
-Thank you to read this file!
+Thanks for you read this file!
 
 Custom Message folder is for custom message build.
 
