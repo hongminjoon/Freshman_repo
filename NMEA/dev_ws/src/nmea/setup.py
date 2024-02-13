@@ -20,6 +20,7 @@ setup(
     tests_require=['pytest'],
     entry_points={
         'console_scripts': [
+            # 노드명 = 패키지명.파이썬파일
             'nmea_publisher = nmea.nmea_publisher:main',
             'nmea_subscriber = nmea.nmea_subscriber:main',
             'nmea_last_subscriber = nmea.nmea_last_subscriber:main',
