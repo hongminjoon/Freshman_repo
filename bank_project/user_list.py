@@ -40,3 +40,6 @@ def get_user_list():
 def print_user_list():
     for i in user_list:
         print(i)
+
+def get_user_num():
+    return len(user_list)

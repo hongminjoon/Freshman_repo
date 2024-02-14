@@ -34,7 +34,10 @@ def main():
             user_list.print_user_list()
 
         elif ch == "3":
-            bank.transfer_money()
+            if user_list.get_user_num() > 1:
+                bank.transfer_money()
+            else:
+                print("최소 인원 2명이 되지 않습니다.")
             
         elif ch == "4":
             account = input("조회할 계좌번호를 입력하세요: ")

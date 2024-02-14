@@ -12,8 +12,12 @@ class User:
         id = self.createId()
         if id is None:
             return 
+        
         self.createPassword()
-        self.createAccount()       
+        self.createAccount()
+        
+        return self.id
+        
 
     def createId(self):
         import user_list
@@ -56,6 +60,7 @@ class User:
                 print("최소 8자리(대문자 1개 필수, 문자, 숫자, 특수문자)를 만족하세요.")
 
         print("계좌 생성")
+        return password
 
     def createAccount(self):
         import random
