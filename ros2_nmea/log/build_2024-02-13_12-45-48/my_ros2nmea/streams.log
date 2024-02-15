@@ -1,0 +1,19 @@
+[0.903s] Invoking command in '/home/hyeeun/ros2_nmea/build/my_ros2nmea': PYTHONPATH=/home/hyeeun/ros2_nmea/build/my_ros2nmea/prefix_override:/home/hyeeun/ros2_nmea/install/my_ros2nmea/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/hyeeun/ros2_nmea/build/my_ros2nmea/build --no-deps install_data
+[1.115s] running develop
+[1.245s] running egg_info
+[1.245s] writing my_ros2nmea.egg-info/PKG-INFO
+[1.245s] writing dependency_links to my_ros2nmea.egg-info/dependency_links.txt
+[1.245s] writing entry points to my_ros2nmea.egg-info/entry_points.txt
+[1.245s] writing requirements to my_ros2nmea.egg-info/requires.txt
+[1.245s] writing top-level names to my_ros2nmea.egg-info/top_level.txt
+[1.273s] reading manifest file 'my_ros2nmea.egg-info/SOURCES.txt'
+[1.274s] writing manifest file 'my_ros2nmea.egg-info/SOURCES.txt'
+[1.304s] running build_ext
+[1.317s] Creating /home/hyeeun/ros2_nmea/install/my_ros2nmea/lib/python3.8/site-packages/site.py
+[1.319s] Creating /home/hyeeun/ros2_nmea/install/my_ros2nmea/lib/python3.8/site-packages/my-ros2nmea.egg-link (link to .)
+[1.319s] Installing pub script to /home/hyeeun/ros2_nmea/install/my_ros2nmea/lib/my_ros2nmea
+[1.319s] Installing sub script to /home/hyeeun/ros2_nmea/install/my_ros2nmea/lib/my_ros2nmea
+[1.320s] 
+[1.320s] Installed /home/hyeeun/ros2_nmea/build/my_ros2nmea
+[1.320s] running install_data
+[1.340s] Invoked command in '/home/hyeeun/ros2_nmea/build/my_ros2nmea' returned '0': PYTHONPATH=/home/hyeeun/ros2_nmea/build/my_ros2nmea/prefix_override:/home/hyeeun/ros2_nmea/install/my_ros2nmea/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/hyeeun/ros2_nmea/build/my_ros2nmea/build --no-deps install_data

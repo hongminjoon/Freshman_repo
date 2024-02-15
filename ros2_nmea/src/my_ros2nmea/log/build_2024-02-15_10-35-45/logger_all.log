@@ -1,0 +1,92 @@
+[2.241s] DEBUG:colcon:Command line arguments: ['/usr/bin/colcon', 'build']
+[2.241s] DEBUG:colcon:Parsed command line arguments: Namespace(allow_overriding=[], ament_cmake_args=None, base_paths=['.'], build_base='build', catkin_cmake_args=None, catkin_skip_building_tests=False, cmake_args=None, cmake_clean_cache=False, cmake_clean_first=False, cmake_force_configure=False, cmake_target=None, cmake_target_skip_unavailable=False, continue_on_error=False, event_handlers=None, executor='parallel', ignore_user_meta=False, install_base='install', log_base=None, log_level=None, main=<bound method BuildVerb.main of <colcon_core.verb.build.BuildVerb object at 0x7fe6813e8d60>>, merge_install=False, metas=['./colcon.meta'], packages_above=None, packages_above_and_dependencies=None, packages_above_depth=None, packages_end=None, packages_ignore=None, packages_ignore_regex=None, packages_select=None, packages_select_build_failed=False, packages_select_by_dep=None, packages_select_regex=None, packages_select_test_failures=False, packages_skip=None, packages_skip_build_finished=False, packages_skip_by_dep=None, packages_skip_regex=None, packages_skip_test_passed=False, packages_skip_up_to=None, packages_start=None, packages_up_to=None, packages_up_to_regex=None, parallel_workers=6, paths=None, symlink_install=False, test_result_base=None, verb_extension=<colcon_core.verb.build.BuildVerb object at 0x7fe6813e8d60>, verb_name='build', verb_parser=<colcon_defaults.argument_parser.defaults.DefaultArgumentsDecorator object at 0x7fe6813b5280>)
+[2.344s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) check parameters
+[2.345s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) check parameters
+[2.345s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) check parameters
+[2.345s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) check parameters
+[2.345s] Level 1:colcon.colcon_core.package_discovery:discover_packages(colcon_meta) discover
+[2.345s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) discover
+[2.345s] INFO:colcon.colcon_core.package_discovery:Crawling recursively for packages in '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea'
+[2.345s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ignore', 'ignore_ament_install']
+[2.345s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore'
+[2.345s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ignore_ament_install'
+[2.345s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_pkg']
+[2.345s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_pkg'
+[2.345s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['colcon_meta']
+[2.345s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'colcon_meta'
+[2.345s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extensions ['ros']
+[2.345s] Level 1:colcon.colcon_core.package_identification:_identify(.) by extension 'ros'
+[2.357s] DEBUG:colcon.colcon_core.package_identification:Package '.' with type 'ros.ament_python' and name 'my_ros2nmea'
+[2.357s] Level 1:colcon.colcon_core.package_discovery:discover_packages(recursive) using defaults
+[2.357s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) discover
+[2.357s] Level 1:colcon.colcon_core.package_discovery:discover_packages(ignore) using defaults
+[2.357s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) discover
+[2.357s] Level 1:colcon.colcon_core.package_discovery:discover_packages(path) using defaults
+[2.565s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) check parameters
+[2.565s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) discover
+[2.643s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install
+[2.682s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /home/hyeeun/github_project/Freshman_repo/ros2_nmea/install
+[2.722s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 1 installed packages in /home/hyeeun/robot_ws/install
+[2.761s] DEBUG:colcon.colcon_installed_package_information.package_discovery:Found 265 installed packages in /opt/ros/foxy
+[2.763s] Level 1:colcon.colcon_core.package_discovery:discover_packages(prefix_path) using defaults
+[2.917s] Level 5:colcon.colcon_core.verb:set package 'my_ros2nmea' build argument 'cmake_args' from command line to 'None'
+[2.917s] Level 5:colcon.colcon_core.verb:set package 'my_ros2nmea' build argument 'cmake_target' from command line to 'None'
+[2.917s] Level 5:colcon.colcon_core.verb:set package 'my_ros2nmea' build argument 'cmake_target_skip_unavailable' from command line to 'False'
+[2.917s] Level 5:colcon.colcon_core.verb:set package 'my_ros2nmea' build argument 'cmake_clean_cache' from command line to 'False'
+[2.917s] Level 5:colcon.colcon_core.verb:set package 'my_ros2nmea' build argument 'cmake_clean_first' from command line to 'False'
+[2.917s] Level 5:colcon.colcon_core.verb:set package 'my_ros2nmea' build argument 'cmake_force_configure' from command line to 'False'
+[2.917s] Level 5:colcon.colcon_core.verb:set package 'my_ros2nmea' build argument 'ament_cmake_args' from command line to 'None'
+[2.917s] Level 5:colcon.colcon_core.verb:set package 'my_ros2nmea' build argument 'catkin_cmake_args' from command line to 'None'
+[2.917s] Level 5:colcon.colcon_core.verb:set package 'my_ros2nmea' build argument 'catkin_skip_building_tests' from command line to 'False'
+[2.917s] DEBUG:colcon.colcon_core.verb:Building package 'my_ros2nmea' with the following arguments: {'ament_cmake_args': None, 'build_base': '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/build/my_ros2nmea', 'catkin_cmake_args': None, 'catkin_skip_building_tests': False, 'cmake_args': None, 'cmake_clean_cache': False, 'cmake_clean_first': False, 'cmake_force_configure': False, 'cmake_target': None, 'cmake_target_skip_unavailable': False, 'install_base': '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea', 'merge_install': False, 'path': '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea', 'symlink_install': False, 'test_result_base': None}
+[2.956s] INFO:colcon.colcon_core.executor:Executing jobs using 'parallel' executor
+[2.996s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete
+[2.996s] INFO:colcon.colcon_ros.task.ament_python.build:Building ROS package in '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea' with build type 'ament_python'
+[2.996s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_ros2nmea', 'ament_prefix_path')
+[3.037s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_core.shell.bat': Not used on non-Windows systems
+[3.037s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea/share/my_ros2nmea/hook/ament_prefix_path.ps1'
+[3.038s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea/share/my_ros2nmea/hook/ament_prefix_path.dsv'
+[3.038s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea/share/my_ros2nmea/hook/ament_prefix_path.sh'
+[3.078s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.078s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[3.487s] INFO:colcon.colcon_core.task.python.build:Building Python package in '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea'
+[3.527s] INFO:colcon.colcon_core.shell:Skip shell extension 'powershell' for command environment: Not usable outside of PowerShell
+[3.527s] DEBUG:colcon.colcon_core.shell:Skip shell extension 'dsv' for command environment
+[4.067s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoking command in '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea': PYTHONPATH=/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/build/my_ros2nmea/prefix_override:/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/my_ros2nmea build --build-base /home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/build/my_ros2nmea/build install --record /home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/build/my_ros2nmea/install.log --install-scripts $base/lib/my_ros2nmea --single-version-externally-managed
+[4.332s] DEBUG:colcon.colcon_core.event_handler.log_command:Invoked command in '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea' returned '0': PYTHONPATH=/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/build/my_ros2nmea/prefix_override:/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea/lib/python3.8/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base build/my_ros2nmea build --build-base /home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/build/my_ros2nmea/build install --record /home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/build/my_ros2nmea/install.log --install-scripts $base/lib/my_ros2nmea --single-version-externally-managed
+[4.374s] Level 1:colcon.colcon_core.environment:checking '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea' for CMake module files
+[4.374s] Level 1:colcon.colcon_core.environment:checking '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea' for CMake config files
+[4.375s] Level 1:colcon.colcon_core.environment:checking '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea/lib'
+[4.375s] Level 1:colcon.colcon_core.environment:checking '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea/bin'
+[4.375s] Level 1:colcon.colcon_core.environment:checking '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea/lib/pkgconfig/my_ros2nmea.pc'
+[4.375s] Level 1:colcon.colcon_core.environment:checking '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea/lib/python3.8/site-packages'
+[4.375s] Level 1:colcon.colcon_core.shell:create_environment_hook('my_ros2nmea', 'pythonpath')
+[4.424s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea/share/my_ros2nmea/hook/pythonpath.ps1'
+[4.425s] INFO:colcon.colcon_core.shell:Creating environment descriptor '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea/share/my_ros2nmea/hook/pythonpath.dsv'
+[4.425s] INFO:colcon.colcon_core.shell:Creating environment hook '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea/share/my_ros2nmea/hook/pythonpath.sh'
+[4.425s] Level 1:colcon.colcon_core.environment:checking '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea/bin'
+[4.425s] Level 1:colcon.colcon_core.environment:create_environment_scripts_only(my_ros2nmea)
+[4.465s] INFO:colcon.colcon_core.shell:Creating package script '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea/share/my_ros2nmea/package.ps1'
+[4.466s] INFO:colcon.colcon_core.shell:Creating package descriptor '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea/share/my_ros2nmea/package.dsv'
+[4.466s] INFO:colcon.colcon_core.shell:Creating package script '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea/share/my_ros2nmea/package.sh'
+[4.467s] INFO:colcon.colcon_core.shell:Creating package script '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea/share/my_ros2nmea/package.bash'
+[4.468s] INFO:colcon.colcon_core.shell:Creating package script '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea/share/my_ros2nmea/package.zsh'
+[4.468s] Level 1:colcon.colcon_core.environment:create_file_with_runtime_dependencies(/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/my_ros2nmea/share/colcon-core/packages/my_ros2nmea)
+[4.468s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:closing loop
+[4.468s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:loop closed
+[4.468s] DEBUG:colcon.colcon_parallel_executor.executor.parallel:run_until_complete finished with '0'
+[4.469s] DEBUG:colcon.colcon_core.event_reactor:joining thread
+[4.511s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.terminal_notifier': Not used on non-Darwin systems
+[4.511s] INFO:colcon.colcon_core.plugin_system:Skipping extension 'colcon_notification.desktop_notification.win32': Not used on non-Windows systems
+[4.511s] INFO:colcon.colcon_notification.desktop_notification:Sending desktop notification using 'notify2'
+[4.523s] DEBUG:colcon.colcon_core.event_reactor:joined thread
+[4.563s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/local_setup.ps1'
+[4.563s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/_local_setup_util_ps1.py'
+[4.565s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/setup.ps1'
+[4.606s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/local_setup.sh'
+[4.606s] INFO:colcon.colcon_core.shell:Creating prefix util module '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/_local_setup_util_sh.py'
+[4.607s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/setup.sh'
+[4.647s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/local_setup.bash'
+[4.648s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/setup.bash'
+[4.688s] INFO:colcon.colcon_core.shell:Creating prefix script '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/local_setup.zsh'
+[4.688s] INFO:colcon.colcon_core.shell:Creating prefix chain script '/home/hyeeun/github_project/Freshman_repo/ros2_nmea/src/my_ros2nmea/install/setup.zsh'

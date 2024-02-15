@@ -1,0 +1,27 @@
+running egg_info
+writing ../../build/my_ros2nmea/my_ros2nmea.egg-info/PKG-INFO
+writing dependency_links to ../../build/my_ros2nmea/my_ros2nmea.egg-info/dependency_links.txt
+writing entry points to ../../build/my_ros2nmea/my_ros2nmea.egg-info/entry_points.txt
+writing requirements to ../../build/my_ros2nmea/my_ros2nmea.egg-info/requires.txt
+writing top-level names to ../../build/my_ros2nmea/my_ros2nmea.egg-info/top_level.txt
+reading manifest file '../../build/my_ros2nmea/my_ros2nmea.egg-info/SOURCES.txt'
+writing manifest file '../../build/my_ros2nmea/my_ros2nmea.egg-info/SOURCES.txt'
+running build
+running build_py
+copying my_ros2nmea/sub.py -> /home/hyeeun/ros2_nmea/build/my_ros2nmea/build/lib/my_ros2nmea
+copying my_ros2nmea/pub.py -> /home/hyeeun/ros2_nmea/build/my_ros2nmea/build/lib/my_ros2nmea
+running install
+running install_lib
+copying /home/hyeeun/ros2_nmea/build/my_ros2nmea/build/lib/my_ros2nmea/sub.py -> /home/hyeeun/ros2_nmea/install/my_ros2nmea/lib/python3.8/site-packages/my_ros2nmea
+copying /home/hyeeun/ros2_nmea/build/my_ros2nmea/build/lib/my_ros2nmea/pub.py -> /home/hyeeun/ros2_nmea/install/my_ros2nmea/lib/python3.8/site-packages/my_ros2nmea
+byte-compiling /home/hyeeun/ros2_nmea/install/my_ros2nmea/lib/python3.8/site-packages/my_ros2nmea/sub.py to sub.cpython-38.pyc
+byte-compiling /home/hyeeun/ros2_nmea/install/my_ros2nmea/lib/python3.8/site-packages/my_ros2nmea/pub.py to pub.cpython-38.pyc
+running install_data
+running install_egg_info
+removing '/home/hyeeun/ros2_nmea/install/my_ros2nmea/lib/python3.8/site-packages/my_ros2nmea-0.0.0-py3.8.egg-info' (and everything under it)
+Copying ../../build/my_ros2nmea/my_ros2nmea.egg-info to /home/hyeeun/ros2_nmea/install/my_ros2nmea/lib/python3.8/site-packages/my_ros2nmea-0.0.0-py3.8.egg-info
+running install_scripts
+Installing pub script to /home/hyeeun/ros2_nmea/install/my_ros2nmea/lib/my_ros2nmea
+Installing sub script to /home/hyeeun/ros2_nmea/install/my_ros2nmea/lib/my_ros2nmea
+Installing sub2 script to /home/hyeeun/ros2_nmea/install/my_ros2nmea/lib/my_ros2nmea
+writing list of installed files to '/home/hyeeun/ros2_nmea/build/my_ros2nmea/install.log'

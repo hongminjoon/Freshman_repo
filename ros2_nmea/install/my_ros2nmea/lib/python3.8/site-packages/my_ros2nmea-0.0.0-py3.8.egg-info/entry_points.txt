@@ -1,0 +1,5 @@
+[console_scripts]
+pub = my_ros2nmea.pub:main
+sub = my_ros2nmea.sub:main
+sub2 = my_ros2nmea.sub2:main
+

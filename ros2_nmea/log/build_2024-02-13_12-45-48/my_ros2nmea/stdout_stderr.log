@@ -1,0 +1,17 @@
+running develop
+running egg_info
+writing my_ros2nmea.egg-info/PKG-INFO
+writing dependency_links to my_ros2nmea.egg-info/dependency_links.txt
+writing entry points to my_ros2nmea.egg-info/entry_points.txt
+writing requirements to my_ros2nmea.egg-info/requires.txt
+writing top-level names to my_ros2nmea.egg-info/top_level.txt
+reading manifest file 'my_ros2nmea.egg-info/SOURCES.txt'
+writing manifest file 'my_ros2nmea.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/hyeeun/ros2_nmea/install/my_ros2nmea/lib/python3.8/site-packages/site.py
+Creating /home/hyeeun/ros2_nmea/install/my_ros2nmea/lib/python3.8/site-packages/my-ros2nmea.egg-link (link to .)
+Installing pub script to /home/hyeeun/ros2_nmea/install/my_ros2nmea/lib/my_ros2nmea
+Installing sub script to /home/hyeeun/ros2_nmea/install/my_ros2nmea/lib/my_ros2nmea
+
+Installed /home/hyeeun/ros2_nmea/build/my_ros2nmea
+running install_data
