@@ -1,0 +1,16 @@
+string gpstype
+string time
+string lat
+string ns
+string lon
+string ew
+string quality
+string numsv
+string hdop
+string alt
+string altunit
+string sep
+string sepunit
+string diffage
+string diffstation
+string cs
