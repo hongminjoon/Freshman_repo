@@ -1,0 +1,6 @@
+any() : 하나라도 True인게 있으면 True
+
+all() : 모두 True여야 True 반환 
+
+isalpha() / isdigit() : 영어가 포함 돼 있으면 True / 숫자가 포함 돼 있으면 True
+
