@@ -37,76 +37,79 @@ class Sub(Node):
             # GGA 데이터를 프로세싱
             latitude, longitude, utm_latitude, utm_longitude = self.TM2UTM(msg.data)
             
-            #self.latitude_list.append(latitude)
-            #self.longitude_list.append(longitude)
-            if latitude and longitude:
+
+            # latitude, longitude 0값 예외 처리
+            if latitude and longitude: 
                 self.UTM_latitude_list.append(utm_latitude)
                 self.UTM_longitude_list.append(utm_longitude)
 
-            line_list = msg.data.split(',')
+                line_list = msg.data.split(',')
 
-            result_str = (
-                    "\n"
-                    "---------------GGA DATA----------------\n"
-                    "GGA.raw_data : {}\n"
-                    "GGA.message_id : {}\n"
-                    "GGA.utc : {}\n"
-                    "GGA.lat : {}\n"
-                    "GGA.lat_dir : {}\n"
-                    "GGA.utm_lat : {}\n"
-                    "GGA.lon : {}\n"
-                    "GGA.lon_dir : {}\n"
-                    "GGA.utm_lon : {}\n"
-                    "GGA.quality : {}\n"
-                    "GGA.num_satelite : {}\n"
-                    "GGA.HDOP : {}\n"
-                    "GGA.alt : {}\n"
-                    "GGA.alt_unit : {}\n"
-                    "GGA.sep : {}\n"
-                    "GGA.sep_unit : {}\n"
-                    "GGA.diff_age : {}\n"
-                    "GGA.diff_station : {}"
-                ).format(
-                    msg.data.strip(),
-                    line_list[0],
-                    line_list[1],
-                    latitude,
-                    line_list[3],
-                    utm_latitude,
-                    longitude,
-                    line_list[5],
-                    utm_longitude,
-                    line_list[6],
-                    line_list[7],
-                    line_list[8],
-                    line_list[9],
-                    line_list[10],
-                    line_list[11],
-                    line_list[12],
-                    line_list[13],
-                    line_list[14]
-            )
+                result_str = (
+                        "\n"
+                        "---------------GGA DATA----------------\n"
+                        "GGA.raw_data : {}\n"
+                        "GGA.message_id : {}\n"
+                        "GGA.utc : {}\n"
+                        "GGA.lat : {}\n"
+                        "GGA.lat_dir : {}\n"
+                        "GGA.utm_lat : {}\n"
+                        "GGA.lon : {}\n"
+                        "GGA.lon_dir : {}\n"
+                        "GGA.utm_lon : {}\n"
+                        "GGA.quality : {}\n"
+                        "GGA.num_satelite : {}\n"
+                        "GGA.HDOP : {}\n"
+                        "GGA.alt : {}\n"
+                        "GGA.alt_unit : {}\n"
+                        "GGA.sep : {}\n"
+                        "GGA.sep_unit : {}\n"
+                        "GGA.diff_age : {}\n"
+                        "GGA.diff_station : {}"
+                    ).format(
+                        msg.data.strip(),
+                        line_list[0],
+                        line_list[1],
+                        latitude,
+                        line_list[3],
+                        utm_latitude,
+                        longitude,
+                        line_list[5],
+                        utm_longitude,
+                        line_list[6],
+                        line_list[7],
+                        line_list[8],
+                        line_list[9],
+                        line_list[10],
+                        line_list[11],
+                        line_list[12],
+                        line_list[13],
+                        line_list[14]
+                )
 
-            result_string = String(data=result_str)
-            # 프로세싱된 GGA 데이터를 퍼블리시
-            self.publisher_.publish(result_string)
+                result_string = String(data=result_str)
+                # 프로세싱된 GGA 데이터를 퍼블리시
+                self.publisher_.publish(result_string)
     
     def TM2UTM(self, gga_sentence):
-        # Parse GGA sentence
-        msg = pynmea2.parse(gga_sentence)
+        try:
+            # Parse GGA sentence
+            msg = pynmea2.parse(gga_sentence)
 
-        latitude = float(msg.latitude) if msg.lat_dir == 'N' else -float(msg.latitude)
-        longitude = float(msg.longitude) if msg.lon_dir == 'E' else -float(msg.longitude)
-        
-        proj_4326 = pyproj.Proj(init='epsg:4326')
-        proj_32652 = pyproj.Proj(init='epsg:32652')
+            latitude = float(msg.latitude) if msg.lat_dir == 'N' else -float(msg.latitude)
+            longitude = float(msg.longitude) if msg.lon_dir == 'E' else -float(msg.longitude)
+            
+            proj_4326 = pyproj.Proj(init='epsg:4326')
+            proj_32652 = pyproj.Proj(init='epsg:32652')
 
-        utm_longitude, utm_latitude = pyproj.transform(proj_4326,proj_32652,longitude, latitude)
+            utm_longitude, utm_latitude = pyproj.transform(proj_4326,proj_32652,longitude, latitude)
 
-        return latitude, longitude, utm_latitude, utm_longitude
+            return latitude, longitude, utm_latitude, utm_longitude
+        except pynmea2.nmea.ParseError as e:
+            print("Failed to parse NMEA data:", e)
+            return None, None, None, None
     
     def save_to_csv(self):
-        #data = {'latitude': self.latitude_list, 'longitude': self.longitude_list, 'UTM_latitude': self.UTM_latitude_list, 'UTM_longitude': self.UTM_longitude_list}
         data = {'UTM_latitude': self.UTM_latitude_list, 'UTM_longitude': self.UTM_longitude_list}
         df = pd.DataFrame(data)
         df.to_csv('utm_data.csv', index=False)

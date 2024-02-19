@@ -13,20 +13,23 @@ class Pub(Node):
         super().__init__('node1')
         qos_profile = QoSProfile(depth=10)
         self.publisher_ = self.create_publisher(String, 'nmea_data', qos_profile)
-        timer_period = 0.1
-        self.timer = self.create_timer(timer_period, self.timer_callback)
+        #timer_period = 0.1
+        #self.timer = self.create_timer(timer_period, self.timer_callback)
         self.serial_port = serial.Serial('/dev/ttyACM0', baudrate=115200, timeout=1)
+        self.read_serial_data()
 
-    def timer_callback(self):
-        # NMEA.txt 파일 읽기
-        # file_path = '/home/sjjung/Desktop/vilab/nmea.txt'
-        # with open(file_path, 'r') as file:
-        #     for line in file:
-        #ser = serial.Serial('/dev/ttyACM0', baudrate=115200, timeout=1)
-        ser_data = self.serial_port.readline().decode('utf-8')        # 각 줄의 내용을 std_msgs/String 메시지로 변환
-        nmea_data_msg = String(data=ser_data.strip())
-        self.publisher_.publish(nmea_data_msg)
-        self.get_logger().info('Publishing: %s' % nmea_data_msg)
+    # def timer_callback(self):
+    #     ser_data = self.serial_port.readline().decode('utf-8')        # 각 줄의 내용을 std_msgs/String 메시지로 변환
+    #     nmea_data_msg = String(data=ser_data.strip())
+    #     self.publisher_.publish(nmea_data_msg)
+    #     self.get_logger().info('Publishing: %s' % nmea_data_msg)
+    
+    def read_serial_data(self):
+        while rclpy.ok():  # rclpy.ok()는 ROS가 종료되었는지 확인하는 함수
+            ser_data = self.serial_port.readline().decode('utf-8')
+            nmea_data_msg = String(data=ser_data.strip())
+            self.publisher_.publish(nmea_data_msg)
+            self.get_logger().info('Publishing: %s' % nmea_data_msg)
                 
 
 def main(args=None):
