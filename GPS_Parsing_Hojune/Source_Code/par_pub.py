@@ -22,7 +22,7 @@ class Parpub(Node):
     def serial_publish(self):
         self.time += 1
         
-        gps_line = self.ser.readline().decode()
+        gps_line = self.ser.readlines()[-2].decode() #이거 안되면 진짜 모름
         
         gps_msg = GpsData()
 

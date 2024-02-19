@@ -16,7 +16,7 @@ class Parsub(Node):
             self.frame = pandas.read_csv('gps_data.csv')
             self.frame_line = len(self.frame)-1
         else:       
-            self.frame = pandas.DataFrame([],columns = ['NMEA lon', 'NMEA lat', 'UTM lon', 'UTM lat'])
+            self.frame = pandas.DataFrame([],columns = ['NMEA lon', 'NMEA lat', 'UTM x', 'UTM y'])
             self.frame_line = 0
         # 'gps_data.csv' 라는 nmea / UTM 좌표가 저장된 스프레드시트 파일이 있을 시 프레임을 가져옴 (os 모듈)
         # 그렇지 않을 때 새 frame을 생성(pandas 라이브러리)
@@ -41,7 +41,7 @@ class Parsub(Node):
                 print(self.data_name[i], ' ' * (15 - len(self.data_name[i])),':', gps_msg_list[i])
                 # 데이터 이름 : 데이터 값 
             
-            if gps_msg.lon and gps_msg.lat != '':
+            if (gps_msg.lon != '') and (gps_msg.lat != ''):
                 Ulon = float(gps_msg.lon[0 : gps_msg.lon.index('.') - 2]) + (float(gps_msg.lon[gps_msg.lon.index('.') -2 : ])/60)
                 Ulat = float(gps_msg.lat[0 : gps_msg.lat.index('.') - 2]) + (float(gps_msg.lat[gps_msg.lat.index('.') - 2 : ])/60)
                 #nmea 0183 의 ddmm.mm 형식을 deciaml degree 형태로 변환. float 형으로 변환하여 연산
