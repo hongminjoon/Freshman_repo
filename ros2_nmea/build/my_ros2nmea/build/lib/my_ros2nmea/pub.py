@@ -13,16 +13,7 @@ class HelloworldPublisher(Node): #Node라는 클래스를 상속받은 메인 �
         self.helloworld_publisher = self.create_publisher(String, 'nmea_data', qos_profile)
         #self.file_path = '/home/hyeeun/inf/nmea.txt'
         self.timer = self.create_timer(1, self.serial)
-        self.count = 0 #콜백 함수에 사용되는 count
-    
-    #nmea_txt를 받는 경우
-    #def publish_txt(self):
-        #with open(self.file_path,'r') as file:
-            #txt_content = file.read()
-        #msg = String()
-        #msg.data = txt_content
-        #self.helloworld_publisher.publish(msg)
-        #self.get_logger().info('published txt content')    
+        self.count = 0 #콜백 함수에 사용되는 count 
         
     def serial(self):
         ser = serial.Serial('/dev/ttyACM0', baudrate=115200, timeout=1)
@@ -30,7 +21,7 @@ class HelloworldPublisher(Node): #Node라는 클래스를 상속받은 메인 �
         while True:
             # 시리얼 포트에서 데이터 읽기
             msg = String()
-            msg.data = ser.readline().decode('utf-8').strip()
+            msg.data = ser.readline().decode('ascii').strip() #utf-8
             #msg_data = ser.read_all()
             self.helloworld_publisher.publish(msg)
             self.get_logger().info('published txt content')    

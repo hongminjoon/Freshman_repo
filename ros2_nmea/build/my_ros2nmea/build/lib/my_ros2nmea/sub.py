@@ -1,6 +1,8 @@
 #sub
 import rclpy
 import csv 
+import os
+import pandas
 from rclpy.node import Node
 from rclpy.qos import QoSProfile
 from std_msgs.msg import String
@@ -24,16 +26,21 @@ class HelloworldSubscriber(Node):
     def parsing(self,msg : String):
         #lines = msg.data.split('\n')
         #좌표 변환 함수
+        if not msg.data:
+            msg.data = ""  # 빈 문자열인 경우 그대로 빈 문자열로 처리
         def transform(latitude,longtitude):
-            latitude = float(latitude)//100 +(float(latitude)%100)/60  # 북위 48도 07.038분 위도
-            longtitude =  float(longtitude)//100 + (float(longtitude)%100)/60  #경도
+            try:
+                latitude = float(latitude)//100 +(float(latitude)%100)/60  # 북위 48도 07.038분 위도
+                longtitude =  float(longtitude)//100 + (float(longtitude)%100)/60  #경도
 
-            proj_4326 = pyproj.Proj(init = 'epsg:4326')
-            proj_32652 = pyproj.Proj(init = 'epsg:32652')  # UTM zone 설정 필요
+                proj_4326 = pyproj.Proj(init = 'epsg:4326')
+                proj_32652 = pyproj.Proj(init = 'epsg:32652')  # UTM zone 설정 필요
 
-            utm_easting, utm_northing = pyproj.transform(proj_4326,proj_32652,longtitude, latitude)
-    
-            return utm_easting,utm_northing
+                utm_easting, utm_northing = pyproj.transform(proj_4326,proj_32652,longtitude, latitude)
+
+                return utm_easting,utm_northing
+            except ValueError:
+                return None,None
 
         if msg.data[3:6]=='GGA':
             list = msg.data.split(',')
@@ -58,13 +65,21 @@ class HelloworldSubscriber(Node):
                  'GGA.check_sum : {14}\n'
                 ).format(list[0],list[1],list[2],list[3],list[4],list[5],list[6],list[7],list[8],list[9],list[10],list[11],list[12],list[13],list[14],msg.data)
             temp.data = a
+            soda = {'UTM_X': [list[4]], 'UTM_Y': [list[2]]}
+            
+            df = pandas.DataFrame(soda)
+            if not os.path.exists('output.csv'):
+                df.to_csv('output.csv', index=False, mode='w', encoding='utf-8-sig')
+            else:
+                df.to_csv('output.csv', index=False, mode='a', encoding='utf-8-sig', header=False)
+            '''
+            #하나씩만 출력할 경우
             f = open('lo.csv','w')
             data = [list[2], list[4]]
             writer = csv.writer(f)
             writer.writerow(data)
+            '''
             self.node2_publisher.publish(temp)
-           
-                
                
     
 def main(args=None):
