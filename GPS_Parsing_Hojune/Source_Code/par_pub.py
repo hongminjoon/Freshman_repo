@@ -9,21 +9,25 @@ class Parpub(Node):
     def __init__(self):
         super().__init__('par_pub')
         self.par_pub = self.create_publisher(GpsData, 'gps_serial' ,10)
-        self.time_between = 0.5
+        self.time_between = 0.1
         self.timer = self.create_timer(self.time_between, self.serial_publish)
         self.time = 0
         self.data_name = ['gps_type', 'time', 'lat', 'NS', 'lon', 'EW', 'quality', 'numSV', 'HDOP', 'alt', 'altUnit', 'sep', 'sepUnit', 'diffAge', 'diffStation', 'cs']
         self.p = re.compile('\$[\w]{2}(?P<gps_type>[\w]*)\,(?P<time>[\d\.]*)\,(?P<lat>[\d\.]*)\,(?P<NS>[\w]*)\,(?P<lon>[\d\.]*)\,(?P<EW>[\w]*)\,(?P<quality>\d)\,(?P<numSV>\d*)\,(?P<HDOP>[\d\.]*)\,(?P<alt>[\d\.]*)\,(?P<altUnit>\w*)\,(?P<sep>[\d\.]*)\,(?P<sepUnit>[\w]*)\,(?P<diffAge>[\d\.]*)\,(?P<diffStation>[\d]*)\*(?P<cs>[\w]*)')
 
         if self.time == 0:
+            # self.ser = serial.Serial('/dev/ttyACM0', 115200, timeout = 1)
             self.ser = serial.Serial('/dev/ttyUSB0', 115200, timeout = 1)
+
             # /dev 디렉토리에서 gps가 연결된 usb 포트를 확인 후 바꾸어주어야 함 
             
     def serial_publish(self):
         self.time += 1
-        
-        gps_line = self.ser.readlines()[-2].decode() #이거 안되면 진짜 모름
-        
+        if self.time % 10 ==0:
+            self.ser.flushInput()
+        # 10회마다 버퍼 지우기
+
+        gps_line = self.ser.readline().decode()
         gps_msg = GpsData()
 
         if gps_line[3:6] == 'GGA':
@@ -52,9 +56,8 @@ class Parpub(Node):
             
         else:
             pass
-            
-
         
+        print(gps_msg.time)
         os.system('clear')
         print('publishing..')
         self.par_pub.publish(gps_msg)
