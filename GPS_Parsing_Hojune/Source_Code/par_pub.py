@@ -23,32 +23,32 @@ class Parpub(Node):
             
     def serial_publish(self):
         self.time += 1
-        if self.time % 10 ==0:
-            self.ser.flushInput()
-        # 10회마다 버퍼 지우기
-
-        gps_line = self.ser.readline().decode()
         gps_msg = GpsData()
-
-        if gps_line[3:6] == 'GGA':
-            try:
-                gps_msg.gpstype = self.p.match(gps_line).group('gps_type')
-                gps_msg.time = self.p.match(gps_line).group('time')
-                gps_msg.lat = self.p.match(gps_line).group('lat')
-                gps_msg.ns = self.p.match(gps_line).group('NS')
-                gps_msg.lon = self.p.match(gps_line).group('lon')
-                gps_msg.ew = self.p.match(gps_line).group('EW')
-                gps_msg.quality = self.p.match(gps_line).group('quality')
-                gps_msg.numsv = self.p.match(gps_line).group('numSV')
-                gps_msg.hdop = self.p.match(gps_line).group('HDOP')
-                gps_msg.alt = self.p.match(gps_line).group('alt')
-                gps_msg.altunit = self.p.match(gps_line).group('altUnit')
-                gps_msg.sep = self.p.match(gps_line).group('sep')
-                gps_msg.sepunit = self.p.match(gps_line).group('sepUnit')
-                gps_msg.diffage = self.p.match(gps_line).group('diffAge')
-                gps_msg.diffstation = self.p.match(gps_line).group('diffStation')
-                gps_msg.cs = self.p.match(gps_line).group('cs')
-            except AttributeError:
+        while True:
+            gps_line = self.ser.readline().decode()
+            if gps_line[3:6] == 'GGA':
+                print('yes')
+                try:
+                    gps_msg.gpstype = self.p.match(gps_line).group('gps_type')
+                    gps_msg.time = self.p.match(gps_line).group('time')
+                    gps_msg.lat = self.p.match(gps_line).group('lat')
+                    gps_msg.ns = self.p.match(gps_line).group('NS')
+                    gps_msg.lon = self.p.match(gps_line).group('lon')
+                    gps_msg.ew = self.p.match(gps_line).group('EW')
+                    gps_msg.quality = self.p.match(gps_line).group('quality')
+                    gps_msg.numsv = self.p.match(gps_line).group('numSV')
+                    gps_msg.hdop = self.p.match(gps_line).group('HDOP')
+                    gps_msg.alt = self.p.match(gps_line).group('alt')
+                    gps_msg.altunit = self.p.match(gps_line).group('altUnit')
+                    gps_msg.sep = self.p.match(gps_line).group('sep')
+                    gps_msg.sepunit = self.p.match(gps_line).group('sepUnit')
+                    gps_msg.diffage = self.p.match(gps_line).group('diffAge')
+                    gps_msg.diffstation = self.p.match(gps_line).group('diffStation')
+                    gps_msg.cs = self.p.match(gps_line).group('cs')
+                except AttributeError:
+                    pass
+                break
+            else:
                 pass
             # custom message 의 .msg 파일에서 선언한 변수형에 따라 변환해줘야함 지금은 모두 string (데이터가 ''일 때 다른 변수형태로 변환하면 에러).
             # regex match 시 위에서 정의한 표현식에 일치하지 않는 serial data가 존재(NoneType error). 지금은 try: except:로 regex에 일치하는 gga 메시지 형태만 전달하도록 설정.
