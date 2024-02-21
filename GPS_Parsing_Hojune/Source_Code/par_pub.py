@@ -16,7 +16,7 @@ class Parpub(Node):
         self.p = re.compile('\$[\w]{2}(?P<gps_type>[\w]*)\,(?P<time>[\d\.]*)\,(?P<lat>[\d\.]*)\,(?P<NS>[\w]*)\,(?P<lon>[\d\.]*)\,(?P<EW>[\w]*)\,(?P<quality>\d)\,(?P<numSV>\d*)\,(?P<HDOP>[\d\.]*)\,(?P<alt>[\d\.]*)\,(?P<altUnit>\w*)\,(?P<sep>[\d\.]*)\,(?P<sepUnit>[\w]*)\,(?P<diffAge>[\d\.]*)\,(?P<diffStation>[\d]*)\*(?P<cs>[\w]*)')
 
         if self.time == 0:
-            self.ser = serial.Serial('/dev/ttyACM0', 115200, timeout = 1)
+            self.ser = serial.Serial('/dev/ttyUSB0', 115200, timeout = 1)
             # /dev 디렉토리에서 gps가 연결된 usb 포트를 확인 후 바꾸어주어야 함 
             
     def serial_publish(self):
