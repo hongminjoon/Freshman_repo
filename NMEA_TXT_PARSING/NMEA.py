@@ -3,11 +3,12 @@ import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 
 class parsing:
-    #nmea.txt 받아내는 함수
+    #nmea.txt 읽기모드로 불러오는 함수
     def __init__(self):
         f = open("/home/hyeeun/inf/nmea.txt", 'r')
         self.lines = f.readlines()
-        self.GGA_list = []
+        self.GGA_list = [] #GGA 데이터만 담긴 리스트
+        
     
     # Transform UTM
     def transform(self, latitude, longitude):
@@ -28,13 +29,12 @@ class parsing:
             if line[3:6] == 'GGA':
                 self.GGA_list.append(line)
 
-        # 분할 및 출력
         for list in self.GGA_list:
-            list_print = list
-            list_print = list_print.strip('\n')
-            list = list[1:].strip('\n')  # 앞에 $제거 && 개행문자 제거하여 쓸데없는 줄바꿈 없애기
-            list = list.split(',')  # ,에 따라 분할
-            list[4], list[2] = self.transform(list[2], list[4])
+            print_list = list #전체 정보가 담긴 GGA 한줄 출력하기 위한 변수
+            print_list = print_list.strip('\n')
+            splited_list = list[1:].strip('\n')  # 앞에 $제거 && 개행문자 제거하여 쓸데없는 줄바꿈 없애기
+            splited_list = splited_list.split(',')  # ,에 따라 분할
+            splited_list[4], splited_list[2] = self.transform(splited_list[2], splited_list[4])
             print('----------GGA DATA----------')
             a = (
                 '{15}\n'
@@ -53,8 +53,8 @@ class parsing:
                 'GGA.sep_unit : {12}\n'
                 'GGA.diff_age : {13}\n'
                 'GGA.check_sum : {14}\n'
-            ).format(list[0], list[1], list[2], list[3], list[4], list[5], list[6], list[7], list[8], list[9],
-                     list[10], list[11], list[12], list[13], list[14], list_print)
+            ).format(splited_list[0], splited_list[1], splited_list[2], splited_list[3], splited_list[4], splited_list[5], splited_list[6], splited_list[7], splited_list[8], splited_list[9],
+                     splited_list[10], splited_list[11], splited_list[12], splited_list[13], splited_list[14], print_list)
             self.a = a
             print(a)
 
