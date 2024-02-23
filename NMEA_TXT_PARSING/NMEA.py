@@ -12,7 +12,7 @@ class parsing:
     
     # Transform UTM
     def transform(self, latitude, longitude):
-        latitude = float(latitude) // 100 + (float(latitude) % 100) / 60  # 북위 48도 07.038분 위도
+        latitude = float(latitude) // 100 + (float(latitude) % 100) / 60  # 북위 48도 07.038분인 위도
         longitude = float(longitude) // 100 + (float(longitude) % 100) / 60  # 경도
 
         proj_4326 = pyproj.Proj(init='epsg:4326')
