@@ -97,4 +97,4 @@ class One :
             self.ac += str(random.choice(string.digits)) 
         return 
         
-        
+    
