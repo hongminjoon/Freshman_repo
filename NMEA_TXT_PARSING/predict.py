@@ -10,11 +10,11 @@ class parsing:
         self.GGA_list = [] #GGA 데이터만 담긴 리스트
         
     
-    # Transform UTM     37°36'42.82"N126°59'38.03"E 산학협력관 
-    #                   37°36'40.9"N 126°59'37.8"E 공학관
+    # Transform UTM    
+    # 차량지능연구실이 나오는게 맞는지 확인하기
     def transform(self, latitude, longitude):
-        latitude = float(latitude) // 100 + (float(latitude) % 100) / 60  # 도분 ->도로 변환 (60->10진법으로 변환)
-        longitude = float(longitude) // 100 + (float(longitude) % 100) / 60  # 경도
+        latitude = (float(latitude) // 100) + ((float(latitude) % 100) / 60) + ((float(latitude)%1)*60)/3600 # 도분초->도로 변환 (60->10진법으로 변환)
+        longitude = (float(longitude) // 100)+ ((float(longitude) % 100) / 60) + ((float(longitude)%1)*60)/3600  # 경도
 
         #pyproj.transform(원본좌표계,대상좌표계,경도,위도) 
         proj_4326 = pyproj.Proj(init='epsg:4326') #WSG84좌표 시스템을 의미
