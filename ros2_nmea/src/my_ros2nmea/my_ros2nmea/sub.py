@@ -26,12 +26,13 @@ class HelloworldSubscriber(Node):
     def parsing(self,msg : String):
         #lines = msg.data.split('\n')
         #좌표 변환 함수
+        #nmea 위경도는 도분으로 돼 있는데 이를 도분초로 변경하여 도로 바꿈
         if not msg.data:
             msg.data = ""  # 빈 문자열인 경우 그대로 빈 문자열로 처리
         def transform(latitude,longtitude):
             try:
-                latitude = float(latitude)//100 +(float(latitude)%100)/60  # 북위 48도 07.038분 위도
-                longtitude =  float(longtitude)//100 + (float(longtitude)%100)/60  #경도
+                latitude = (float(latitude) // 100) + ((float(latitude) % 100) / 60) + ((float(latitude)%1)*60)/3600 # 도분초->도로 변환 (60->10진법으로 변환)
+                longitude = (float(longitude) // 100)+ ((float(longitude) % 100) / 60) + ((float(longitude)%1)*60)/3600  # 경도
 
                 proj_4326 = pyproj.Proj(init = 'epsg:4326')
                 proj_32652 = pyproj.Proj(init = 'epsg:32652')  # UTM zone 설정 필요

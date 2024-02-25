@@ -10,8 +10,9 @@ class parsing:
         self.GGA_list = [] #GGA 데이터만 담긴 리스트
         
     
-    # Transform UTM     37°36'42.82"N126°59'38.03"E 산학협력관 
-    #                   37°36'40.9"N 126°59'37.8"E 공학관
+    # Transform UTM     
+        #nmea 위경도는 도분으로 돼 있는데 이를 도분초로 변경하여 도로 바꿈
+    #맨 처음에 나온 gga가 우리 연구실 위경도가 맞는지 확인하기
     def transform(self, latitude, longitude):
         latitude = float(latitude) // 100 + (float(latitude) % 100) / 60  # 도분 ->도로 변환 (60->10진법으로 변환)
         longitude = float(longitude) // 100 + (float(longitude) % 100) / 60  # 경도
@@ -38,7 +39,7 @@ class parsing:
             splited_list = splited_list.split(',')  # ,에 따라 분할
             splited_list[4], splited_list[2] = self.transform(splited_list[2], splited_list[4])
             print('----------GGA DATA----------')
-            a = (
+            parsed_value = (
                 '{15}\n'
                 'GGA.message_id : {0} \n'
                 'GGA.utc : {1} \n'
@@ -57,8 +58,8 @@ class parsing:
                 'GGA.check_sum : {14}\n'
             ).format(splited_list[0], splited_list[1], splited_list[2], splited_list[3], splited_list[4], splited_list[5], splited_list[6], splited_list[7], splited_list[8], splited_list[9],
                      splited_list[10], splited_list[11], splited_list[12], splited_list[13], splited_list[14], print_list)
-            self.a = a
-            print(a)
+            self.parsed_value = parsed_value
+            print(parsed_value)
 
 def main():
     NMEA_PARSING = parsing()
