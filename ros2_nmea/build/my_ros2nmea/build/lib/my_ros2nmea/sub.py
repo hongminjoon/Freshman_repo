@@ -63,7 +63,7 @@ class node2_subscriber(Node):
                 ).format(splited_list[0],splited_list[1],splited_list[2],splited_list[3],splited_list[4],splited_list[5],splited_list[6],splited_list[7],splited_list[8],splited_list[9],splited_list[10],splited_list[11],splited_list[12],splited_list[13],splited_list[14],msg.data)
             parsed_data.data = parse_data
             self.Node2_publisher.publish(parsed_data)
-            soda = {'UTM_X': [splited_list[4]], 'UTM_Y': [splited_list[2]]}
+            soda = {'UTM_X': [splited_list[2]], 'UTM_Y': [splited_list[4]]}
             
             df = pandas.DataFrame(soda)
             if not os.path.exists('output.csv'):

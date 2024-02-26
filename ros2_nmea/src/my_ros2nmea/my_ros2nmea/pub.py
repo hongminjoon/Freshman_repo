@@ -15,13 +15,13 @@ class node1_publisher(Node): #Node라는 클래스를 상속받은 메인 클래
         self.timer = self.create_timer(1, self.serial)
         self.count = 0 #콜백 함수에 사용되는 count 
         
-    def serial(self):
-        ser = serial.Serial('/dev/ttyACM0', baudrate=115200, timeout=1)
+    def serial(self): #ACM /USB
+        ser = serial.Serial('/dev/ttyUSB0', baudrate=115200, timeout=1)
         
         while True:
             # 시리얼 포트에서 데이터 읽기
             msg = String()
-            msg.data = ser.readline().decode('UTF-8').strip() #utf-8
+            msg.data = ser.readline().decode('ascii').strip() #utf-8
             #msg_data = ser.read_all()
             self.Node1_publisher.publish(msg)
             self.get_logger().info('published txt content')    

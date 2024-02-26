@@ -21,7 +21,7 @@ class node1_publisher(Node): #Node라는 클래스를 상속받은 메인 클래
         while True:
             # 시리얼 포트에서 데이터 읽기
             msg = String()
-            msg.data = ser.readline().decode('UTF-8').strip() #utf-8
+            msg.data = ser.readline().decode('ascii').strip() #utf-8
             #msg_data = ser.read_all()
             self.Node1_publisher.publish(msg)
             self.get_logger().info('published txt content')    
