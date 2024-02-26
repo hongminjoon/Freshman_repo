@@ -5,11 +5,11 @@ from std_msgs.msg import String
 import csv
 
 
-class Helloworld2_Subscriber(Node):
+class node3_subscriber(Node):
     def __init__(self):
-        super().__init__('Helloworld2_subscriber')
+        super().__init__('Node3')
         qos_profile = QoSProfile(depth=10)
-        self.helloworld2_subscriber = self.create_subscription(
+        self.Node3_subscriber = self.create_subscription(
             String,
             'parsing_data',
             self.subscribe_topic_message2,
@@ -20,13 +20,13 @@ class Helloworld2_Subscriber(Node):
     
 def main(args=None):
     rclpy.init(args=args)
-    node = Helloworld2_Subscriber()
+    node3 = node3_subscriber()
     try:
-        rclpy.spin(node)
+        rclpy.spin(node3)
     except KeyboardInterrupt:
-        node.get_logger().info('Keyboard Interrupt (SIGINT)')
+        node3.get_logger().info('Keyboard Interrupt (SIGINT)')
     finally:
-        node.destroy_node()
+        node3.destroy_node()
         rclpy.shutdown()
 
 if __name__ == '__main__':

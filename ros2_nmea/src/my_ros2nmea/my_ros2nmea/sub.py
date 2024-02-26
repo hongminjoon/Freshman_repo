@@ -10,17 +10,12 @@ import pyproj
 import warnings
 warnings.filterwarnings("ignore", category=FutureWarning)
 
-class HelloworldSubscriber(Node):
+class node2_subscriber(Node):
     def __init__(self):
-        super().__init__('Helloworld_subscriber')
+        super().__init__('Node2')
         qos_profile = QoSProfile(depth=10)
-        self.helloworld_subscriber = self.create_subscription(
-            String,
-            'nmea_data',
-            self.parsing,
-            qos_profile)
-        
-        self.node2_publisher = self.create_publisher(String, 'parsing_data', qos_profile)
+        self.Node2_subscriber = self.create_subscription(String, 'nmea_data', self.parsing, qos_profile)
+        self.Node2_publisher = self.create_publisher(String, 'parsing_data', qos_profile)
        
            
     def parsing(self,msg : String):
@@ -29,7 +24,7 @@ class HelloworldSubscriber(Node):
         #nmea 위경도는 도분으로 돼 있는데 이를 도분초로 변경하여 도로 바꿈
         if not msg.data:
             msg.data = ""  # 빈 문자열인 경우 그대로 빈 문자열로 처리
-        def transform(latitude,longtitude):
+        def transform(latitude,longitude):
             try:
                 latitude = (float(latitude) // 100) + ((float(latitude) % 100) / 60) + ((float(latitude)%1)*60)/3600 # 도분초->도로 변환 (60->10진법으로 변환)
                 longitude = (float(longitude) // 100)+ ((float(longitude) % 100) / 60) + ((float(longitude)%1)*60)/3600  # 경도
@@ -37,17 +32,18 @@ class HelloworldSubscriber(Node):
                 proj_4326 = pyproj.Proj(init = 'epsg:4326')
                 proj_32652 = pyproj.Proj(init = 'epsg:32652')  # UTM zone 설정 필요
 
-                utm_easting, utm_northing = pyproj.transform(proj_4326,proj_32652,longtitude, latitude)
+                utm_easting, utm_northing = pyproj.transform(proj_4326,proj_32652,longitude, latitude)
 
                 return utm_easting,utm_northing
             except ValueError:
                 return None,None
 
         if msg.data[3:6]=='GGA':
-            list = msg.data.split(',')
-            list[4],list[2] = transform(list[2],list[4]) 
-            temp = String()
-            a = ( 
+            splited_list = msg.data.split(',')
+            splited_list[4],splited_list[2] = transform(splited_list[2],splited_list[4]) 
+            parsed_data = String()
+            parse_data = ( 
+                '----------GGA DATA----------\n'
                 '{15}\n'
                 'GGA.message_id : {0} \n'
                  'GGA.utc : {1} \n'
@@ -64,34 +60,25 @@ class HelloworldSubscriber(Node):
                  'GGA.sep_unit : {12}\n'
                  'GGA.diff_age : {13}\n'
                  'GGA.check_sum : {14}\n'
-                ).format(list[0],list[1],list[2],list[3],list[4],list[5],list[6],list[7],list[8],list[9],list[10],list[11],list[12],list[13],list[14],msg.data)
-            temp.data = a
-            soda = {'UTM_X': [list[4]], 'UTM_Y': [list[2]]}
+                ).format(splited_list[0],splited_list[1],splited_list[2],splited_list[3],splited_list[4],splited_list[5],splited_list[6],splited_list[7],splited_list[8],splited_list[9],splited_list[10],splited_list[11],splited_list[12],splited_list[13],splited_list[14],msg.data)
+            parsed_data.data = parse_data
+            self.Node2_publisher.publish(parsed_data)
+            soda = {'UTM_X': [splited_list[4]], 'UTM_Y': [splited_list[2]]}
             
             df = pandas.DataFrame(soda)
             if not os.path.exists('output.csv'):
                 df.to_csv('output.csv', index=False, mode='w', encoding='utf-8-sig')
             else:
                 df.to_csv('output.csv', index=False, mode='a', encoding='utf-8-sig', header=False)
-            '''
-            #하나씩만 출력할 경우
-            f = open('lo.csv','w')
-            data = [list[2], list[4]]
-            writer = csv.writer(f)
-            writer.writerow(data)
-            '''
-            self.node2_publisher.publish(temp)
-               
-    
 def main(args=None):
     rclpy.init(args=args)
-    node = HelloworldSubscriber()
+    node2 = node2_subscriber()
     try:
-        rclpy.spin(node)
+        rclpy.spin(node2)
     except KeyboardInterrupt:
-        node.get_logger().info('Keyboard Interrupt (SIGINT)')
+        node2.get_logger().info('Keyboard Interrupt (SIGINT)')
     finally:
-        node.destroy_node()
+        node2.destroy_node()
         rclpy.shutdown()
 
 if __name__ == '__main__':

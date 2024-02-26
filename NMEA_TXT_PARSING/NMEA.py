@@ -14,8 +14,8 @@ class parsing:
         #nmea 위경도는 도분으로 돼 있는데 이를 도분초로 변경하여 도로 바꿈
     #맨 처음에 나온 gga가 우리 연구실 위경도가 맞는지 확인하기
     def transform(self, latitude, longitude):
-        latitude = float(latitude) // 100 + (float(latitude) % 100) / 60  # 도분 ->도로 변환 (60->10진법으로 변환)
-        longitude = float(longitude) // 100 + (float(longitude) % 100) / 60  # 경도
+        latitude = (float(latitude) // 100) + ((float(latitude) % 100) / 60) + ((float(latitude)%1)*60)/3600 # 도분초->도로 변환 (60->10진법으로 변환)
+        longitude = (float(longitude) // 100)+ ((float(longitude) % 100) / 60) + ((float(longitude)%1)*60)/3600  # 경도
 
         #pyproj.transform(원본좌표계,대상좌표계,경도,위도) 
         proj_4326 = pyproj.Proj(init='epsg:4326') #WSG84좌표 시스템을 의미
