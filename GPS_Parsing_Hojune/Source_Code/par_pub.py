@@ -27,7 +27,6 @@ class Parpub(Node):
         while True:
             gps_line = self.ser.readline().decode()
             if gps_line[3:6] == 'GGA':
-                print('yes')
                 try:
                     gps_msg.gpstype = self.p.match(gps_line).group('gps_type')
                     gps_msg.time = self.p.match(gps_line).group('time')
@@ -54,8 +53,6 @@ class Parpub(Node):
             # regex match 시 위에서 정의한 표현식에 일치하지 않는 serial data가 존재(NoneType error). 지금은 try: except:로 regex에 일치하는 gga 메시지 형태만 전달하도록 설정.
             # 반복문으로 바꿀 방법?
             
-        else:
-            pass
         
         print(gps_msg.time)
         os.system('clear')
